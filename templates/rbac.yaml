@@ -1,0 +1,81 @@
+# GitOps Toolkit revision latest 2020-07-29T15:51:20-04:00
+# Components: source-controller,kustomize-controller,helm-controller,notification-controller
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app.kubernetes.io/instance: gitops-system
+    app.kubernetes.io/version: latest
+  name: crd-controller-gitops-system
+  namespace: gitops-system
+rules:
+- apiGroups:
+  - source.fluxcd.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - kustomize.fluxcd.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - helm.fluxcd.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - notification.fluxcd.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - configmaps/status
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/instance: gitops-system
+    app.kubernetes.io/version: latest
+  name: crd-controller-gitops-system
+  namespace: gitops-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: crd-controller-gitops-system
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: gitops-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/instance: gitops-system
+    app.kubernetes.io/version: latest
+  name: cluster-reconciler-gitops-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: gitops-system
