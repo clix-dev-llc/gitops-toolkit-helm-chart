@@ -1,0 +1,8 @@
+helmController:
+  image: docker.io/fluxcd/helm-controller:v0.0.1-beta.4
+kustomizeController:
+  image: docker.io/fluxcd/kustomize-controller:v0.0.6
+notificationController:
+  image: docker.io/fluxcd/notification-controller:v0.0.5
+sourceController:
+  image: docker.io/fluxcd/source-controller:v0.0.6
