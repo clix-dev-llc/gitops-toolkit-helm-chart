@@ -1,4 +1,5 @@
 name: gitops-toolkit
 apiVersion: v2
 appVersion: v0.0.12
+description: GitOps Toolkit revision latest 2020-07-29T15:51:20-04:00
 version: 0.1
