@@ -25,5 +25,5 @@ helm install --namespace gitops-system gitops-toolkit .
 tk install --export > templates/template.yaml
 # move crds out of template.yaml into crds.yaml
 # remove namespace object
-make all
+make build
 ```
