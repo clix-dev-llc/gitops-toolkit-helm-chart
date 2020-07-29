@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  gitops-toolkit:
+  - apiVersion: v2
+    appVersion: v0.0.12
+    created: "2020-07-29T15:59:44.073238-04:00"
+    digest: 024756499be4b545d378db1487d038d68f77f4c7d0b344481cd365b462d71c65
+    name: gitops-toolkit
+    urls:
+    - gitops-toolkit-0.1.tgz
+    version: "0.1"
+generated: "2020-07-29T15:59:44.070775-04:00"
