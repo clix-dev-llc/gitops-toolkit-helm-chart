@@ -15,6 +15,7 @@ Alternatively
 ```sh
 git clone <path-to-repo>
 cd <path-to-repo>
+kubectl create namespace gitops-system
 helm install --namespace gitops-system gitops-toolkit .
 ```
 
@@ -23,5 +24,6 @@ helm install --namespace gitops-system gitops-toolkit .
 ```sh
 tk install --export > templates/template.yaml
 # move crds out of template.yaml into crds.yaml
+# remove namespace object
 make all
 ```

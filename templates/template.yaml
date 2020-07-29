@@ -1,14 +1,5 @@
----
 # GitOps Toolkit revision latest 2020-07-29T15:51:20-04:00
 # Components: source-controller,kustomize-controller,helm-controller,notification-controller
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    app.kubernetes.io/instance: gitops-system
-    app.kubernetes.io/version: latest
-  name: gitops-system
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
