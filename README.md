@@ -1,5 +1,9 @@
 # Gitops Toolkit Helm Chart
 
+## Prerequisites
+
+- Helm 3
+
 ## Install
 
 ```sh
